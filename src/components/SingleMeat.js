@@ -11,6 +11,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import recipe from '../Recipe_take3.png'
 import beyond from '../beyondburger.png'
 import restuarant from '../restuarant.png'
+import Iframe from 'react-iframe'
 
 
 export class Meat extends React.Component {
@@ -33,6 +34,37 @@ export class Meat extends React.Component {
     }
     
   render() {
+    let urlObj = {}
+    if (this.state.selectedItem === burger){
+      urlObj.make = "https://tasty.co/recipe/the-best-ever-vegan-burger"
+      urlObj.buy = "https://www.theorganicgrill.com/burger-challenge"
+      urlObj.grocery = "https://www.beyondmeat.com/products/the-beyond-burger/"
+    }
+    if (this.state.selectedItem === mac){
+      urlObj.make = "https://www.ambitiouskitchen.com/easy-vegan-mac-and-cheese/"
+      urlObj.buy = "https://lazygirlvegan.com/2018/02/26/vegan-nyc-where-to-find-the-best-creamiest-vegan-mac-cheese-in-new-york-city/"
+      urlObj.grocery = "https://www.amys.com/our-foods/rice-mac-cheeze-gluten-free-dairy-free"
+    }
+    if (this.state.selectedItem === pizza){
+      urlObj.make = "https://www.thecuriouschickpea.com/vegan-pepperoni-pan-pizza/"
+      urlObj.buy = "https://www.doordash.com/store/screamers-pizzeria-brooklyn-55728/"
+      urlObj.grocery = "https://daiyafoods.com/our-foods/gluten-free-pizza/meatless_pepperoni/"
+    }
+    if (this.state.selectedItem === breakfast){
+      urlObj.make = "https://www.epicurious.com/recipes/food/views/the-best-vegan-tofu-breakfast-sandwich"
+      urlObj.buy = "https://www.orchardgrocer.com/"
+      urlObj.grocery = "https://www.amys.com/our-foods/breakfast-burrito"
+    }
+    if (this.state.selectedItem === icecream){
+      urlObj.make = "https://tofurky.com/recipes/maple-bacon-ice-cream/"
+      urlObj.buy = "https://www.livekindly.co/salt-straw-ice-cream-chain-vegan-bacon-flavored-scoop-menu/"
+      urlObj.grocery = "http://www.dreamplantbased.com/product/almond-dream-toffee-almond-fudge/"
+    }
+    if (this.state.selectedItem === lasagna){
+      urlObj.make =  "http://www.everydayveganfood.com/meaty-vegan-lasagna/"
+      urlObj.buy = "https://www.tripadvisor.com/LocationPhotoDirectLink-g60763-d795039-i79466508-Blossom_Vegan_Restaurant-New_York_City_New_York.html"
+      urlObj.grocery = "https://www.amys.com/our-foods/vegetable-lasagna-with-daiya-cheeze-gluten-free-dairy-free"
+    }
       console.log('STATE', this.state)
     if (this.state.value === ''){
     return (
@@ -71,7 +103,13 @@ export class Meat extends React.Component {
                   <button type="submit" value="Buy it" onClick={this.handleSubmit}>Eat it now</button>
                 </div>
                 <div className="vegan">
-                <img src={beyond} alt="recipe"/>
+                <Iframe url={urlObj.grocery}
+                  width="450px"
+                  height="450px"
+                  id="myId"
+                  className="myClassname"
+                  display="initial"
+                  position="relative"/>
               </div>
          </div>
           </div>
@@ -94,7 +132,13 @@ export class Meat extends React.Component {
                   <button type="submit" value="Buy it" onClick={this.handleSubmit}>Eat it now</button>
                 </div>
                 <div className="vegan">
-                <img src={restuarant} alt="recipe"/>
+                <Iframe url={urlObj.buy}
+                  width="450px"
+                  height="450px"
+                  id="myId"
+                  className="myClassname"
+                  display="initial"
+                  position="relative"/>
               </div>
          </div>
           </div>
@@ -117,7 +161,13 @@ export class Meat extends React.Component {
                   <button type="submit" value="Buy it" onClick={this.handleSubmit}>Eat it now</button>
                 </div>
                 <div className="vegan">
-                <img src={recipe} alt="recipe"/>
+                <Iframe url={urlObj.make}
+                  width="450px"
+                  height="450px"
+                  id="myId"
+                  className="myClassname"
+                  display="initial"
+                  position="relative"/>
               </div>
          </div>
           </div>
