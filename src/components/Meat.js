@@ -7,6 +7,7 @@ import icecream from '../baconicecream-removebg-preview.png'
 import lasagna from '../meatylasagna-removebg-preview_crop.png'
 import styled from "styled-components";
 import SingleMeat from './SingleMeat'
+import alternalogo from '../Alterna_Logo_New.jpeg'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export class Meat extends React.Component {
@@ -34,7 +35,7 @@ export class Meat extends React.Component {
       <div className="page">
       <div className="heading">
         <h1>AlternaBurger</h1>
-        <p>A search engine for plant based alternatives, even more delicious</p>
+        <p>Plant based alternatives, even more delicious</p>
       </div>
             <div className="meatParent">
             <h1 className="question">What are you in the mood for today?</h1>

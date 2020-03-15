@@ -6,15 +6,16 @@ import breakfast from '../BreakfastSandwhich-removebg-preview.png'
 import icecream from '../baconicecream-removebg-preview.png'
 import lasagna from '../meatylasagna-removebg-preview_crop.png'
 import styled from "styled-components";
-import SingleMeat from './SingleMeat'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import recipe from '../Recipe_take3.png'
 import beyond from '../beyondburger.png'
 import restuarant from '../restuarant.png'
 import Iframe from 'react-iframe'
+import Meat from './Meat'
 
 
-export class Meat extends React.Component {
+
+export class SingleMeat extends React.Component {
 
     constructor(props) {
         super(props);
@@ -24,6 +25,7 @@ export class Meat extends React.Component {
           value: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleGoBack = this.handleGoBack.bind(this)
       }
 
     handleSubmit(event) {
@@ -31,6 +33,13 @@ export class Meat extends React.Component {
     value: event.target.value
     })
     event.preventDefault();
+    }
+
+    handleGoBack(event){
+      this.setState({
+        allItems: true
+      })
+     event.preventDefault();
     }
     
   render() {
@@ -66,10 +75,26 @@ export class Meat extends React.Component {
       urlObj.grocery = "https://www.amys.com/our-foods/vegetable-lasagna-with-daiya-cheeze-gluten-free-dairy-free"
     }
       console.log('STATE', this.state)
-    if (this.state.value === ''){
+  if (this.state.allItems === true){
+        return (
+        <div>
+          <Meat />
+        </div>
+         )
+       }
+    else if (this.state.value === ''){
     return (
         <Wrapper>
            <div className="page">
+           <div className="heading">
+          <div>
+          <button type="submit" value="goBack" onClick={this.handleGoBack}>Back</button>
+          </div>
+           <div className="alternaburger_logo">
+              {/* <h1>AlternaBurger</h1>
+               <p>A search engine for plant based alternatives, even more delicious</p> */}
+          </div>
+          </div>
             <div className="meatParent">
                 <div className="thisPageImage">
                     <img src={this.state.selectedItem} alt="selectedItem"/>
@@ -92,6 +117,15 @@ export class Meat extends React.Component {
     return (
       <Wrapper>
          <div className="page">
+         <div className="heading">
+          <div>
+          <button type="submit" value="goBack" onClick={this.handleGoBack}>Back</button>
+          </div>
+           <div className="alternaburger_logo">
+              {/* <h1>AlternaBurger</h1>
+               <p>A search engine for plant based alternatives, even more delicious</p> */}
+          </div>
+          </div>
           <div className="meatParent">
               <div className="thisPageImage">
                   <img src={this.state.selectedItem} alt="selectedItem"/>
@@ -121,6 +155,15 @@ export class Meat extends React.Component {
     return (
       <Wrapper>
          <div className="page">
+         <div className="heading">
+          <div>
+          <button type="submit" value="goBack" onClick={this.handleGoBack}>Back</button>
+          </div>
+           <div className="alternaburger_logo">
+              {/* <h1>AlternaBurger</h1>
+               <p>A search engine for plant based alternatives, even more delicious</p> */}
+          </div>
+          </div>
           <div className="meatParent">
               <div className="thisPageImage">
                   <img src={this.state.selectedItem} alt="selectedItem"/>
@@ -150,6 +193,15 @@ export class Meat extends React.Component {
     return (
       <Wrapper>
          <div className="page">
+         <div className="heading">
+          <div>
+          <button type="submit" value="goBack" onClick={this.handleGoBack}>Back</button>
+          </div>
+           <div className="alternaburger_logo">
+              {/* <h1>AlternaBurger</h1>
+               <p>A search engine for plant based alternatives, even more delicious</p> */}
+          </div>
+          </div>
           <div className="meatParent">
               <div className="thisPageImage">
                   <img src={this.state.selectedItem} alt="selectedItem"/>
@@ -185,6 +237,14 @@ const Wrapper = styled.div`
   background-color: #282c34;
 }
 
+.heading {
+  color: white; 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 .center-text {
   display: flex;
   flex-direction: column;
@@ -196,6 +256,10 @@ const Wrapper = styled.div`
   animation-name: pulse;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+}
+
+.alternaburger_logo {
+  align-self: center; 
 }
 
 // img:hover {
@@ -292,10 +356,6 @@ button:hover {
   margin: 0;
 
 
-
-
-
-
   // background-color: #EEEEEE;
   // position: absolute;
   // align-self: center;
@@ -304,4 +364,4 @@ button:hover {
 }
 `;   
 
-export default Meat
+export default SingleMeat
