@@ -1,10 +1,10 @@
 import React from "react";
 import burger from '../burger-removebg-preview_smol.png'
 import mac from '../macandcheese-removebg-preview.png'
-import pizza from '../pizza-removebg-preview.png'
+import pizza from '../pizza-removebg-fixed.png'
 import breakfast from '../BreakfastSandwhich-removebg-preview.png'
-import icecream from '../baconicecream-removebg-preview.png'
-import lasagna from '../meatylasagna-removebg-preview_crop.png'
+import icecream from '../baconicecream-removebg-fixed.png'
+import lasagna from '../meatylasagna-removebg-fixed.png'
 import styled from "styled-components";
 import SingleMeat from './SingleMeat'
 import alternalogo from '../Alterna_Logo_New.jpeg'
@@ -49,7 +49,7 @@ export class Meat extends React.Component {
                 {this.state.showPopup ?  
                   <Popup  
                   text="Inspired by studies that show that eating fewer animal products per week can dramatically 
-                  reduce our carbon footprint, AlternaBurger is an interactive plant-based resource built to serve you satisfying meals and instant gratification. Click 
+                  reduce our carbon footprint, AlternaBurger is an interactive resource built to serve you satisfying meals and instant gratification. Click 
                   the food you want to get started!"
                   closePopup={this.togglePopup.bind(this)}  />  : null  }  
         </div> 

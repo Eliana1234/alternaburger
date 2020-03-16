@@ -1,10 +1,10 @@
 import React from "react";
 import burger from '../burger-removebg-preview_smol.png'
 import mac from '../macandcheese-removebg-preview.png'
-import pizza from '../pizza-removebg-preview.png'
+import pizza from '../pizza-removebg-fixed.png'
 import breakfast from '../BreakfastSandwhich-removebg-preview.png'
-import icecream from '../baconicecream-removebg-preview.png'
-import lasagna from '../meatylasagna-removebg-preview_crop.png'
+import icecream from '../baconicecream-removebg-fixed.png'
+import lasagna from '../meatylasagna-removebg-fixed.png'
 import styled from "styled-components";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import recipe from '../Recipe_take3.png'
